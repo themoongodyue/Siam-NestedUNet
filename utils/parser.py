@@ -29,16 +29,16 @@ parser.add_argument('--loss_function', type=str, default='hybrid',
                     help='The loss function for Siam-NestedUnet.')
 
 parser.add_argument('--dataset_train_dir', type=str,
-                    default="/mnt/DataShare/D5/runhao/data/subset/train",
+                    default="/home/ubuntu/data/subset/train",
                     help='The directory containing the train data.')
 parser.add_argument('--dataset_val_dir', type=str,
-                    default="/mnt/DataShare/D5/runhao/data/subset/val",
+                    default="/home/ubuntu/data/subset/val",
                     help='The directory containing the val data.')
-parser.add_argument('--weights_dir', type=str, default="./weights/tutorial",
+parser.add_argument('--weights_dir', type=str, default="./weights/tutorial_40",
                     help='The directory of saving weights.')
-parser.add_argument('--log_dir', type=str, default="./weights/tutorial/log",
+parser.add_argument('--log_dir', type=str, default="./weights/tutorial_40/log",
                     help='The directory of saving weights.')
-parser.add_argument('--pred_dir', type=str, default='/mnt/DataShare/D5/runhao/code/Siam-NestedUNet/output',
+parser.add_argument('--pred_dir', type=str, default='/home/ubuntu/code/Siam-NestedUNet/output',
                     help='The directory of the predict image.')
 
 args = parser.parse_args()

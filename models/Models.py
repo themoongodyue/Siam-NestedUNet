@@ -59,13 +59,13 @@ class ChannelAttention(nn.Module):
         self.fc1 = nn.Conv2d(in_channels, in_channels//ratio, 1, bias=False)
         self.relu1 = nn.ReLU()
         self.fc2 = nn.Conv2d(in_channels//ratio, in_channels, 1, bias=False)
-        self.sigmod = nn.Sigmoid()
+        self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
         avg_out = self.fc2(self.relu1(self.fc1(self.avg_pool(x))))
         max_out = self.fc2(self.relu1(self.fc1(self.max_pool(x))))
         out = avg_out + max_out
-        return self.sigmod(out)
+        return self.sigmoid(out)
 
 
 class SNUNet_ECAM(nn.Module):
